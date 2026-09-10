@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- Left major city grid -->
+        <div class="city-grid-panel"><div class="city-grid" id="leftCityGrid"></div></div>
+
+        <!-- Center main weather panel -->
+        <main class="center-weather">
+            <!-- Search bar -->
+            <div class="search-container">
+                <div class="search-bar" id="searchBar">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" fill="none" stroke="currentColor"/></svg>
+                    <input type="text" id="locationInput" value="San Francisco" placeholder="Search city">
+                    <button type="button" id="unitToggleBtn" class="unit-toggle-btn" title="Switch Temperature Unit">°F</button>
+                </div>
+                <div id="searchError" class="search-error-msg"></div>
+            </div>
+
+            <!-- Current weather display -->
+            <section class="current-weather">
+                <div id="center-mainIcon" class="weather-icon-container"></div>
+                <div id="center-temperature" class="temperature skeleton">--</div>
+                <div id="center-condition" class="condition skeleton">--</div>
+                <div id="center-highLow" class="high-low skeleton">--</div>
+            </section>
+
+            <!-- Detailed metrics grid -->
+            <section class="details-grid">
+                <div class="detail-tile"><span class="label">HUMIDITY</span><span class="value skeleton" id="center-val-humidity">--</span></div>
+                <div class="detail-tile"><span class="label">WIND</span><span class="value skeleton" id="center-val-wind">--</span></div>
+                <div class="detail-tile"><span class="label">FEELS LIKE</span><span class="value skeleton" id="center-val-feels">--</span></div>
+                <div class="detail-tile"><span class="label">PRESSURE</span><span class="value skeleton" id="center-val-pressure">--</span></div>
+                <div class="detail-tile"><span class="label">CLOUD COVER</span><span class="value skeleton" id="center-val-clouds">--</span></div>
+                <div class="detail-tile"><span class="label">WIND GUSTS</span><span class="value skeleton" id="center-val-gusts">--</span></div>
+                <div class="detail-tile"><span class="label">UV INDEX</span><span class="value skeleton" id="center-val-uv">--</span></div>
+                <div class="detail-tile"><span class="label">PRECIP</span><span class="value skeleton" id="center-val-precip">--</span></div>
+                <div class="detail-tile"><span class="label">VISIBILITY</span><span class="value skeleton" id="center-val-visibility">--</span></div>
+            </section>
+
+            <!-- 5-day forecast card -->
+            <section class="glass-card">
+                <div class="forecast-title">5-DAY FORECAST</div>
+                <div class="forecast-days skeleton" id="center-forecast"></div>
+            </section>
+        </main>
+
+        <!-- Right major city grid -->
+        <div class="city-grid-panel"><div class="city-grid" id="rightCityGrid"></div></div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
